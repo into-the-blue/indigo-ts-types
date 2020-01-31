@@ -171,3 +171,25 @@ export interface IApartment {
 
   updatedTime: Date
 }
+
+export interface IMetroLine {
+  id: string
+  lineName: string
+  lineId: string
+  url: string
+  city: string
+}
+
+interface IMetroStationDEPRECATED {
+  lineId: string
+  url: string
+}
+export interface IMetroStation extends IMetroStationDEPRECATED {
+  id: string
+  stationName: string
+  stationId: string
+  city: string
+  lineIds: string[]
+  urls: string[]
+  coordinates: number[]
+}
