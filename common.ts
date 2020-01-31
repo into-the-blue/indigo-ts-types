@@ -184,6 +184,10 @@ interface IMetroStationDEPRECATED {
   lineId: string
   url: string
 }
+
+interface IMetroStationClient extends IMetroStation {
+  lines: IMetroLine[]
+}
 export interface IMetroStation extends IMetroStationDEPRECATED {
   id: string
   stationName: string
