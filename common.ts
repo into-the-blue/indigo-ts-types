@@ -185,7 +185,7 @@ interface IMetroStationDEPRECATED {
   url: string
 }
 
-interface IMetroStationClient extends IMetroStation {
+export interface IMetroStationClient extends IMetroStation {
   lines: IMetroLine[]
 }
 export interface IMetroStation extends IMetroStationDEPRECATED {
