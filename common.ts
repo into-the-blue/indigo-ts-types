@@ -1,7 +1,7 @@
-type Missing1<T> = '暂无数据' | T
+type Missing1<T> = '暂无数据' | T;
 
-type ApartmentRentType = '整租' | '合租'
-type CityAbbreviation = 'sh'
+type ApartmentRentType = '整租' | '合租';
+type CityAbbreviation = 'sh';
 type ApartmentTags =
   | '押一付一'
   | '随时看房'
@@ -13,17 +13,17 @@ type ApartmentTags =
   | '精装'
   | '双卫生间'
   | '租住保障'
-  | '独立阳台'
+  | '独立阳台';
 
-type ApartmentLease = Missing1<string>
+type ApartmentLease = Missing1<string>;
 
-type ApartmentElectricityType = '商电' | '民电'
+type ApartmentElectricityType = '商电' | '民电';
 
-type ApartmentWaterType = Missing1<'商水' | '民水'>
+type ApartmentWaterType = Missing1<'商水' | '民水'>;
 
-type Carport = Missing1<'租用车位'>
+type Carport = Missing1<'租用车位'>;
 
-type ApartmentGas = Missing1<'有' | '无'>
+type ApartmentGas = Missing1<'有' | '无'>;
 // [
 //   "1号线 - 汶水路",
 //   "534m"
@@ -32,168 +32,171 @@ type ApartmentGas = Missing1<'有' | '无'>
 //   "1号线 - 上海马戏城",
 //   "1188m"
 // ]
-type TransportationLine = string
-type TransportationDistance = string
-type Transportation = [TransportationLine, TransportationDistance]
+type TransportationLine = string;
+type TransportationDistance = string;
+type Transportation = [TransportationLine, TransportationDistance];
 
-type ApartmentCheckInDate = '随时入住' | string
+type ApartmentCheckInDate = '随时入住' | string;
 
-type Facility = 0 | 1
+type Facility = 0 | 1;
 
-type ApartmentElevator = Missing1<'有'>
+type ApartmentElevator = Missing1<'有'>;
 
 interface IGeoInfo {
   location: {
-    lat: number
-    lng: number
-  }
-  precise: number
-  comprehension: number
-  confidence: number
-  level: string
+    lat: number;
+    lng: number;
+  };
+  precise: number;
+  comprehension: number;
+  confidence: number;
+  level: string;
 }
 export interface IApartment {
-  id: string
+  id: string;
 
-  type: ApartmentRentType
+  type: ApartmentRentType;
 
-  title: string
+  title: string;
 
-  createdAt: string
+  createdAt: string;
 
-  houseCode: string
+  houseCode: string;
 
-  houseId: string
+  houseId: string;
 
-  cityAbbreviation: CityAbbreviation
+  cityAbbreviation: CityAbbreviation;
 
-  imgUrls: string[]
+  imgUrls: string[];
 
-  price: number
+  price: number;
 
-  tags: ApartmentTags[]
+  tags: ApartmentTags[];
 
   // [0-10]室[0-10]厅[0-10]卫
-  houseType: string
+  houseType: string;
 
-  area: number
+  area: number;
   //  南 / 北 / 南 北 / 南 西 北 ....etc
-  orient: string
+  orient: string;
 
   // 1~12个月
-  lease: ApartmentLease
+  lease: ApartmentLease;
 
   // '23'
-  floor: string
+  floor: string;
 
   // 33
-  buildingTotalFloors: number
+  buildingTotalFloors: number;
 
-  carport: Carport
+  carport: Carport;
 
-  electricity: ApartmentElectricityType
+  electricity: ApartmentElectricityType;
 
   // can be a date '2020-02-10'
-  checkInDate: ApartmentCheckInDate
+  checkInDate: ApartmentCheckInDate;
 
   // 暂无数据, 有, 暂无数据 转换成 无
-  elevator: ApartmentElevator
+  elevator: ApartmentElevator;
 
   // if 暂无数据 and 公寓 in tags: 商水
-  water: ApartmentWaterType
+  water: ApartmentWaterType;
 
-  gas: ApartmentGas
+  gas: ApartmentGas;
 
-  television: Facility
+  television: Facility;
 
-  fridge: Facility
+  fridge: Facility;
 
-  washingMachine: Facility
+  washingMachine: Facility;
 
-  airCondition: Facility
+  airCondition: Facility;
 
-  waterHeater: Facility
+  waterHeater: Facility;
 
-  bed: Facility
+  bed: Facility;
 
-  heating: Facility
+  heating: Facility;
 
-  wifi: Facility
+  wifi: Facility;
 
-  closet: Facility
+  closet: Facility;
 
-  naturalGas: Facility
+  naturalGas: Facility;
 
-  transportations: Transportation[]
+  transportations: Transportation[];
 
   // empty str
-  communityDeals: string
+  communityDeals: string;
   // empty str
-  houseDescription: string
+  houseDescription: string;
 
-  houseUrl: string
+  houseUrl: string;
   // 上海
-  city: string
+  city: string;
 
-  district: string
+  district: string;
 
-  bizcircle: string
+  bizcircle: string;
 
-  communityName: string
+  communityName: string;
 
-  communityUrl: string
+  communityUrl: string;
 
-  pricePerSquareMeter: number
+  pricePerSquareMeter: number;
 
   // brokerBrand: string
 
-  floorAccessibility: Facility
+  floorAccessibility: Facility;
 
-  subwayAccessibility: Facility
+  subwayAccessibility: Facility;
 
-  coordinates: number[]
+  coordinates: number[];
 
-  coordtype: 'gcj02' | 'amap-gcj02'
+  coordtype: 'gcj02' | 'amap-gcj02';
 
   // imageDownloaded: boolean
 
-  geoInfo: IGeoInfo
+  geoInfo: IGeoInfo;
 
-  lat: number
+  lat: number;
 
-  lng: number
+  lng: number;
 
-  lineIds: string[]
+  lineIds: string[];
 
-  stationIds: string[]
+  stationIds: string[];
 
-  createdTime: Date
+  createdTime: Date;
 
-  updatedTime: Date
+  updatedTime: Date;
+
+  distance: number;
 }
 
 export interface IMetroLine {
-  id: string
-  lineName: string
-  lineId: string
-  url: string
-  city: string
+  id: string;
+  lineName: string;
+  lineId: string;
+  url: string;
+  city: string;
 }
 
 interface IMetroStationDEPRECATED {
-  lineId: string
-  url: string
+  lineId: string;
+  url: string;
 }
 
 export interface IMetroStationClient extends IMetroStation {
-  lines: IMetroLine[]
+  lines: IMetroLine[];
+  distance: number;
 }
 export interface IMetroStation extends IMetroStationDEPRECATED {
-  id: string
-  stationName: string
-  stationId: string
-  city: string
-  lineIds: string[]
-  urls: string[]
-  coordinates: number[]
+  id: string;
+  stationName: string;
+  stationId: string;
+  city: string;
+  lineIds: string[];
+  urls: string[];
+  coordinates: number[];
 }
