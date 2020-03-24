@@ -52,6 +52,23 @@ interface IGeoInfo {
   confidence: number;
   level: string;
 }
+
+export interface IApartmentComputedInfo {
+  rankingOfPPSM: number;
+  rankingOfPrice: number;
+  rankingOfArea: number;
+  averagePPSM: number;
+  averagePrice: number;
+  averageArea: number;
+  medianPPSM: number;
+  medianPrice: number;
+  medianArea: number;
+  lowestPPSM: string;
+  lowestPrice: string;
+  total: number;
+  updatedAt: number;
+  range: number;
+}
 export interface IApartment {
   id: string;
 
@@ -172,6 +189,8 @@ export interface IApartment {
   updatedTime: Date;
 
   distance: number;
+
+  computed?: IApartmentComputedInfo;
 }
 
 export interface IMetroLine {
