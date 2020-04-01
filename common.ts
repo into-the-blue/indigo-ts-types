@@ -42,15 +42,43 @@ type Facility = 0 | 1
 
 type ApartmentElevator = Missing1<'有'>
 
-interface IGeoInfo {
-  location: {
-    lat: number
-    lng: number
-  }
-  precise: number
-  comprehension: number
-  confidence: number
+type GeoCode = {
+  formatted_address: string
+  country: string
+  province: string
+  city: string
+  district: string
+  township: []
+  neighborhood: { name: []; type: [] }
+  building: { name: []; type: [] }
+  adcode: string
+  street: []
+  number: []
+  location: string
   level: string
+}
+export interface IGeoInfoAMap {
+  status: '1' | string
+  info: 'OK' | string
+  infocode: '10000' | string
+  count: string
+  geocodes: GeoCode[]
+}
+type TApartmentComputed = {
+  rankingOfPPSM: number
+  rankingOfPrice: number
+  rankingOfArea: number
+  averagePPSM: number
+  averagePrice: number
+  averageArea: number
+  medianPPSM: number
+  medianPrice: number
+  medianArea: number
+  lowestPPSM: string
+  lowestPrice: string
+  total: number
+  updatedAt: Date
+  range: number
 }
 export interface IApartment {
   id: string
@@ -58,6 +86,8 @@ export interface IApartment {
   type: ApartmentRentType
 
   title: string
+
+  computed?: TApartmentComputed
 
   createdAt: string
 
@@ -157,7 +187,7 @@ export interface IApartment {
 
   // imageDownloaded: boolean
 
-  geoInfo: IGeoInfo
+  geoInfo: IGeoInfoAMap
 
   lat: number
 
@@ -196,4 +226,57 @@ export interface IMetroStation extends IMetroStationDEPRECATED {
   lineIds: string[]
   urls: string[]
   coordinates: number[]
+}
+
+type TSubConditionKeys = keyof Pick<
+  IApartment,
+  'area' | 'pricePerSquareMeter' | 'price'
+>
+
+export type TSubCondition =
+  | {
+      key: TSubConditionKeys
+      type: 'range'
+      condition: [number | -1, number | -1]
+    }
+  | {
+      key: TSubConditionKeys
+      type: 'boolean'
+      condition: boolean
+    }
+
+export type TSubscriptionPayload =
+  | {
+      stationId: string
+    }
+  | {
+      address: string
+    }
+
+export interface ISubscription {
+  coordinates: [number, number]
+  type: 'metroStation' | 'customLocation'
+  payload: TSubscriptionPayload
+  radius: number
+  conditions: TSubCondition[]
+  userId: string
+  city: string
+  createdAt: Date
+  updatedAt: Date
+}
+
+export interface ISubscriptionSetting {
+  maximumSubscriptions: number | -1
+  type: '5' | '7' | '14' | '30' | 'friend'
+  smsEnable: boolean
+  emailEnable: boolean
+  notificationEnable: boolean
+  userId: string
+}
+
+export interface ISubscriptionNotificationHistory {
+  userId: string
+  subscriptionId: string
+  createdAt: Date
+  success: boolean
 }
