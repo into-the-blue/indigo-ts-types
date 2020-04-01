@@ -57,16 +57,16 @@ type GeoCode = {
   location: string
   level: string
 }
-interface IGeoInfoBDMap {
-  location: {
-    lat: number
-    lng: number
-  }
-  precise: number
-  comprehension: number
-  confidence: number
-  level: string
-}
+// interface IGeoInfoBDMap {
+//   location: {
+//     lat: number
+//     lng: number
+//   }
+//   precise: number
+//   comprehension: number
+//   confidence: number
+//   level: string
+// }
 
 export interface IGeoInfoAMap {
   status: '1' | string
