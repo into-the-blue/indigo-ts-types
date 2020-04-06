@@ -259,7 +259,7 @@ export type TSubConditionBoolean = {
 };
 
 export type TSubConditionText = {
-  key: 'type';
+  key: string;
   type: 'text';
   condition: string;
   value?: string[];
