@@ -75,7 +75,7 @@ export interface IGeoInfoAMap {
   count: string;
   geocodes: GeoCode[];
 }
-type TApartmentComputed = {
+export type TApartmentComputed = {
   rankingOfPPSM: number;
   rankingOfPrice: number;
   rankingOfArea: number;
