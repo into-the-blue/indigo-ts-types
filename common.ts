@@ -239,10 +239,10 @@ export interface IMetroStation extends IMetroStationDEPRECATED {
   city: string;
   lineIds: string[];
   urls: string[];
-  coordinates: number[];
+  coordinates: [number, number];
 }
 
-type TSubConditionKeys = keyof Pick<IApartment, 'area' | 'pricePerSquareMeter' | 'price'>;
+// type TSubConditionKeys = keyof Pick<IApartment, 'area' | 'pricePerSquareMeter' | 'price'>;
 
 export type TSubConditionRange = {
   key: 'area' | 'pricePerSquareMeter' | 'price';
@@ -301,4 +301,9 @@ export interface ISubscriptionNotificationHistory {
   subscriptionId: string;
   createdAt: Date;
   success: boolean;
+}
+
+export interface ICustomLocation {
+  address: string;
+  coordinates: [number, number];
 }
