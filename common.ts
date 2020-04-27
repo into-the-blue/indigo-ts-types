@@ -287,6 +287,12 @@ export interface ISubscription {
   updatedAt: Date;
 }
 
+export interface ISubscriptionClient extends ISubscription {
+  id: string;
+  countOfNotifications: number;
+  popuparity: number;
+}
+
 export interface ISubscriptionSetting {
   maximumSubscriptions: number | -1;
   type: '5' | '7' | '14' | '30' | 'friend';
