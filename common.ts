@@ -268,7 +268,7 @@ export type TSubConditionText = {
 export type TSubCondition = TSubConditionBoolean | TSubConditionRange | TSubConditionText;
 
 export type TSubscriptionPayload =
-  | IMetroStation
+  | Pick<IMetroStation, 'stationId' | 'stationName'>
   | {
       address: string;
     };
