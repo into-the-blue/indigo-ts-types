@@ -291,7 +291,7 @@ export interface ISubscription {
 
 export interface ISubscriptionClient extends ISubscription {
   id: string;
-  countOfNotifications: number;
+  numOfNotificationRecords: number;
   popuparity: number;
 }
 
@@ -378,7 +378,7 @@ export interface IUser {
   updatedAt: Date;
 }
 
-export type THttpResponse<T> = {
+export type THttpResponse<T = undefined> = {
   code: number;
   success: boolean;
   message: string;
