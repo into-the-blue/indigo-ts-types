@@ -360,8 +360,7 @@ export interface ISubscriptionNotificationRecord {
   wechatNotifyEnable: boolean
   emailNotifyEnable: boolean
   smsNotifyEnable: boolean
-  // friend | (sponsor | lifelongMember) | 5 | 14 | 30
-  priority: TSubscriptionNotificationPriority
+  priority: TSubscriptionNotificationPriority // friend | (sponsor | lifelongMember) | 5 | 14 | 30
 }
 
 
