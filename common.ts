@@ -364,10 +364,6 @@ export interface ISubscriptionNotificationRecord {
   priority: TSubscriptionNotificationPriority
 }
 
-export interface ICustomLocation {
-  address: string
-  coordinates: [number, number]
-}
 
 export interface IUserAuthData {
   unionId: string
