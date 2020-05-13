@@ -353,11 +353,10 @@ export interface ISubscriptionNotificationRecord {
   // success: boolean
   viewed: boolean;
 
-  wechatNotifyEnable: boolean;
-  emailNotifyEnable: boolean;
-  smsNotifyEnable: boolean;
-  // friend | (sponsor | lifelongMember) | 5 | 14 | 30
-  priority: TSubscriptionNotificationPriority;
+  wechatNotifyEnable: boolean
+  emailNotifyEnable: boolean
+  smsNotifyEnable: boolean
+  priority: TSubscriptionNotificationPriority // friend | (sponsor | lifelongMember) | 5 | 14 | 30
 }
 
 export interface IUserAuthData {
