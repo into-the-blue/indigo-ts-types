@@ -344,7 +344,7 @@ export interface ISubscriptionNotificationRecord {
   userId: string;
   subscriptionId: string;
   apartmentId: string;
-  locationId: string;
+  // locationId: string;
   createdAt: Date;
   updatedAt: Date;
   feedback: 'good' | 'moderate' | 'bad';
