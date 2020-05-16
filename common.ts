@@ -337,7 +337,7 @@ export interface ICustomLocation {
 
 export type TSubscriptionNotificationPriority = 0 | 1 | 2 | 3 | 4;
 
-export interface IClientISubscriptionNotificationRecord extends ISubscriptionNotificationRecord {
+export interface ISubscriptionNotificationRecordClient extends ISubscriptionNotificationRecord {
   apartment: Omit<IApartment, 'geoInfo'>;
 }
 export interface ISubscriptionNotificationRecord {
