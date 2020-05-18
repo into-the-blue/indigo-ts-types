@@ -190,7 +190,7 @@ export interface IApartment {
 
   subwayAccessibility: Facility;
 
-  coordinates: number[];
+  coordinates: [number, number];
 
   coordtype: 'gcj02' | 'amap-gcj02';
 
