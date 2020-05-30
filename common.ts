@@ -190,7 +190,7 @@ export interface IApartment {
 
   subwayAccessibility: Facility
 
-  coordinates: [number, number];
+  coordinates: [number, number]
 
   coordtype: 'gcj02' | 'amap-gcj02'
 
@@ -347,9 +347,10 @@ export interface ICustomLocation {
 
 export type TSubscriptionNotificationPriority = 0 | 1 | 2 | 3 | 4
 
-export interface ISubscriptionNotificationRecordClient extends ISubscriptionNotificationRecord {
-  apartment: Omit<IApartment, 'geoInfo'>;
-  id: string;
+export interface ISubscriptionNotificationRecordClient
+  extends ISubscriptionNotificationRecord {
+  apartment: Omit<IApartment, 'geoInfo'>
+  id: string
 }
 export interface ISubscriptionNotificationRecord {
   userId: string
@@ -364,10 +365,10 @@ export interface ISubscriptionNotificationRecord {
   // success: boolean
   viewed: boolean
 
-  wechatNotifyEnable: boolean;
-  emailNotifyEnable: boolean;
-  smsNotifyEnable: boolean;
-  priority: TSubscriptionNotificationPriority; // friend | (sponsor | lifelongMember) | 5 | 14 | 30
+  wechatNotifyEnable: boolean
+  emailNotifyEnable: boolean
+  smsNotifyEnable: boolean
+  priority: TSubscriptionNotificationPriority // friend | (sponsor | lifelongMember) | 5 | 14 | 30
 }
 
 export interface IUserAuthData {
@@ -398,4 +399,15 @@ export type THttpResponse<T = undefined> = {
   success: boolean
   message: string
   data?: T
+}
+
+export interface IPOI {
+  name: string
+  type: string
+  typeCode: string
+  address: string
+  location: string
+  coordinates: [number, number]
+  city: string
+  district: string
 }
