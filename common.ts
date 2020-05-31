@@ -330,6 +330,8 @@ export interface ICustomLocationClient extends ICustomLocation {
 export interface ICustomLocation {
   address: string;
   city: string;
+  name: string;
+  district: string;
   coordinates: [number, number];
   createdAt: string;
   updatedAt: string;
