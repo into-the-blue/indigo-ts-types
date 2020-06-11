@@ -268,10 +268,7 @@ export type TSubConditionText = {
   value: string[];
 };
 
-export type TSubCondition =
-  | TSubConditionBoolean
-  | TSubConditionRange
-  | TSubConditionText;
+export type TSubCondition = TSubConditionBoolean | TSubConditionRange | TSubConditionText;
 
 export type TSubscriptionPayload =
   | Pick<IMetroStation, 'stationId' | 'stationName'>
@@ -297,17 +294,11 @@ export interface ISubscription {
 export interface ISubscriptionClient extends ISubscription {
   id: string;
   numOfNotificationRecords: number;
+  numOfUnreadNotificationRecords: number;
   popuparity: number;
 }
 
-export type TMemberType =
-  | '5'
-  | '14'
-  | '30'
-  | 'friend'
-  | 'sponsor'
-  | 'lifelongMember'
-  | 'admin';
+export type TMemberType = '5' | '14' | '30' | 'friend' | 'sponsor' | 'lifelongMember' | 'admin';
 
 export interface IMemberInfo {
   type: TMemberType;
@@ -326,11 +317,7 @@ export interface IMemberInfo {
   expireAt: Date;
 }
 
-export type TMemberPurchaseSource =
-  | 'purchase'
-  | 'gift'
-  | 'activity'
-  | 'monthly_activity';
+export type TMemberPurchaseSource = 'purchase' | 'gift' | 'activity' | 'monthly_activity';
 export interface IMemberPurchaseRecord {
   userId: string;
   price: number;
@@ -361,8 +348,7 @@ export interface ICustomLocation {
 
 export type TSubscriptionNotificationPriority = 0 | 1 | 2 | 3 | 4;
 
-export interface ISubscriptionNotificationRecordClient
-  extends ISubscriptionNotificationRecord {
+export interface ISubscriptionNotificationRecordClient extends ISubscriptionNotificationRecord {
   apartment: Omit<IApartment, 'geoInfo'>;
   id: string;
 }
