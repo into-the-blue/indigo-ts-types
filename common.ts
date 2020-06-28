@@ -441,4 +441,5 @@ export interface IAvailableCity {
   name: string;
   value: string;
   defaultCoordinates: [number, number];
+  count: number;
 }
