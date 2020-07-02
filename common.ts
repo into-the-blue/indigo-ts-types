@@ -216,6 +216,8 @@ export interface IApartment {
 
   // number of notified subscriptions
   notified?: number;
+
+  notificationSent?: boolean;
 }
 
 export interface IMetroLine {
@@ -404,6 +406,7 @@ export interface IUser {
   city: string;
   email: string | null;
   language: string;
+  wechatMessageEnable: boolean;
   createdAt: Date;
   updatedAt: Date;
 }
